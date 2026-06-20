@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CryptoDesk — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/media.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-icon">₿</div>
+      <span class="logo-text">CryptoDesk</span>
+    </div>
+
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item active">
+          <span class="nav-icon">⊞</span>
+          <span>Dashboard</span>
+        </li>
+        <li class="nav-item">
+          <a href="#"><span class="nav-icon">◈</span><span>Workspaces</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><span class="nav-icon">▦</span><span>Boards</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><span class="nav-icon">◉</span><span>Members</span></a>
+        </li>
+      </ul>
+
+      <ul class="nav-list nav-bottom">
+        <li class="nav-item">
+          <a href="#"><span class="nav-icon">⚙</span><span>Settings</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="#"><span class="nav-icon">↪</span><span>Logout</span></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="theme-toggle">
+      <button id="btn-dark" class="theme-btn active-theme-btn">🌙 Dark</button>
+      <button id="btn-light" class="theme-btn">☀️ Light</button>
+    </div>
+  </aside>
+
+  <!-- Header -->
+  <header class="header">
+    <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <h1 class="page-title">Dashboard</h1>
+
+    <form class="search-form" role="search">
+      <span class="search-icon">🔍</span>
+      <input type="search" id="search-input" placeholder="Search assets…" autocomplete="off">
+    </form>
+
+    <div class="user-info" id="user-info">
+      <img src="img/download.png" alt="User avatar" class="user-avatar">
+      <button class="user-name" id="user-name-btn">Ali Mohammadi</button>
+      <ul class="user-dropdown" id="user-dropdown">
+        <li data-name="Ali Asghar">Ali Asghar</li>
+        <li data-name="Poori Asghar">Poori Asghar</li>
+        <li data-name="Reza Tehrani">Reza Tehrani</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- Mobile search -->
+    <div class="mobile-search">
+      <form class="search-form search-form--mobile" role="search">
+        <span class="search-icon">🔍</span>
+        <input type="search" placeholder="Search assets…" autocomplete="off">
+      </form>
+    </div>
+
+    <div class="main-grid">
+
+      <!-- LEFT COLUMN -->
+      <div class="col-left">
+
+        <!-- Asset Summary -->
+        <div class="asset-summary">
+          <span class="asset-label">Total Asset Value</span>
+          <h2 class="asset-value">$3,433.54</h2>
+          <span class="asset-sub negative">▼ 24,343 BTC</span>
+        </div>
+
+        <!-- Chart Card -->
+        <div class="card chart-card">
+          <div class="chart-header">
+            <span class="card-label">Price Chart</span>
+            <div class="filter-pills">
+              <button class="pill">USD</button>
+              <button class="pill">Filter</button>
+            </div>
+          </div>
+
+          <div class="btc-row">
+            <div class="btc-title">
+              <p class="btc-pair">Bitcoin / BTC</p>
+              <h3 class="btc-price">$343,222.30</h3>
+            </div>
+            <div class="time-filters">
+              <button class="time-btn time-btn--active">1H</button>
+              <button class="time-btn">3H</button>
+              <button class="time-btn">1W</button>
+              <button class="time-btn">1M</button>
+              <button class="time-btn">1Y</button>
+            </div>
+          </div>
+
+          <div class="chart-placeholder" id="chart">
+            <span>📈 Chart coming soon</span>
+          </div>
+        </div>
+
+        <!-- Operation Card -->
+        <div class="card operation-card">
+          <div class="operation-header">
+            <span class="card-label">Operation</span>
+            <div class="op-tabs">
+              <button class="op-tab op-tab--active">Buy</button>
+              <button class="op-tab">Exchange</button>
+              <button class="op-tab">Sell</button>
+            </div>
+            <span class="rate-label">1 BTC = $2.345</span>
+          </div>
+
+          <div class="operation-body">
+            <div class="op-inputs">
+              <div class="op-field">
+                <h4 class="op-field-label">You Pay</h4>
+                <div class="op-input-row card-inner">
+                  <span class="currency-badge">USD</span>
+                  <div class="op-amount">
+                    <span class="op-value">$34,332.30</span>
+                    <span class="max-badge">MAX</span>
+                  </div>
+                </div>
+              </div>
+              <div class="op-field">
+                <h4 class="op-field-label">You Get</h4>
+                <div class="op-input-row card-inner">
+                  <span class="currency-badge">BTC</span>
+                  <div class="op-amount">
+                    <span class="op-value">0.00432 ₿</span>
+                    <span class="max-badge">MAX</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="buy-btn">Buy Bitcoin</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="col-right">
+
+        <!-- Coin Cards -->
+        <div class="coin-grid">
+          <div class="card coin-card">
+            <div class="coin-header">
+              <div class="coin-meta">
+                <div class="coin-icon-wrap">₿</div>
+                <div>
+                  <h3 class="coin-name">Bitcoin</h3>
+                  <span class="coin-symbol">BTC</span>
+                </div>
+              </div>
+              <span class="trend-icon">↗</span>
+            </div>
+            <div class="coin-body">
+              <div class="coin-price-block">
+                <h3 class="coin-price">$43,541.23</h3>
+                <span class="coin-change negative">▼ 3.42%</span>
+              </div>
+              <div class="mini-chart">📉</div>
+            </div>
+          </div>
+
+          <div class="card coin-card">
+            <div class="coin-header">
+              <div class="coin-meta">
+                <div class="coin-icon-wrap eth">Ξ</div>
+                <div>
+                  <h3 class="coin-name">Ethereum</h3>
+                  <span class="coin-symbol">ETH</span>
+                </div>
+              </div>
+              <span class="trend-icon positive">↗</span>
+            </div>
+            <div class="coin-body">
+              <div class="coin-price-block">
+                <h3 class="coin-price">$2,841.90</h3>
+                <span class="coin-change positive">▲ 1.87%</span>
+              </div>
+              <div class="mini-chart">📈</div>
+            </div>
+          </div>
+
+          <div class="card coin-card">
+            <div class="coin-header">
+              <div class="coin-meta">
+                <div class="coin-icon-wrap sol">◎</div>
+                <div>
+                  <h3 class="coin-name">Solana</h3>
+                  <span class="coin-symbol">SOL</span>
+                </div>
+              </div>
+              <span class="trend-icon positive">↗</span>
+            </div>
+            <div class="coin-body">
+              <div class="coin-price-block">
+                <h3 class="coin-price">$182.44</h3>
+                <span class="coin-change positive">▲ 5.21%</span>
+              </div>
+              <div class="mini-chart">📈</div>
+            </div>
+          </div>
+
+          <div class="card coin-card">
+            <div class="coin-header">
+              <div class="coin-meta">
+                <div class="coin-icon-wrap bnb">B</div>
+                <div>
+                  <h3 class="coin-name">BNB</h3>
+                  <span class="coin-symbol">BNB</span>
+                </div>
+              </div>
+              <span class="trend-icon">↗</span>
+            </div>
+            <div class="coin-body">
+              <div class="coin-price-block">
+                <h3 class="coin-price">$601.12</h3>
+                <span class="coin-change negative">▼ 0.93%</span>
+              </div>
+              <div class="mini-chart">📉</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="card portfolio-card">
+          <h2 class="portfolio-title">My Portfolio</h2>
+          <div class="portfolio-list">
+
+            <div class="portfolio-row">
+              <div class="portfolio-left">
+                <div class="p-icon-wrap">Ξ</div>
+                <div>
+                  <h4 class="p-name">Ethereum</h4>
+                  <span class="p-price">$48,848.30</span>
+                </div>
+              </div>
+              <div class="portfolio-right">
+                <span class="p-change negative">▼ 3939</span>
+                <h4 class="p-amount">0.3838 ETH</h4>
+              </div>
+            </div>
+
+            <div class="portfolio-row">
+              <div class="portfolio-left">
+                <div class="p-icon-wrap btc-icon">₿</div>
+                <div>
+                  <h4 class="p-name">Bitcoin</h4>
+                  <span class="p-price">$43,210.00</span>
+                </div>
+              </div>
+              <div class="portfolio-right">
+                <span class="p-change positive">▲ 1203</span>
+                <h4 class="p-amount">0.0012 BTC</h4>
+              </div>
+            </div>
+
+            <div class="portfolio-row">
+              <div class="portfolio-left">
+                <div class="p-icon-wrap sol-icon">◎</div>
+                <div>
+                  <h4 class="p-name">Solana</h4>
+                  <span class="p-price">$182.44</span>
+                </div>
+              </div>
+              <div class="portfolio-right">
+                <span class="p-change positive">▲ 412</span>
+                <h4 class="p-amount">2.2500 SOL</h4>
+              </div>
+            </div>
+
+            <div class="portfolio-row">
+              <div class="portfolio-left">
+                <div class="p-icon-wrap bnb-icon">B</div>
+                <div>
+                  <h4 class="p-name">BNB</h4>
+                  <span class="p-price">$601.12</span>
+                </div>
+              </div>
+              <div class="portfolio-right">
+                <span class="p-change negative">▼ 88</span>
+                <h4 class="p-amount">0.7700 BNB</h4>
+              </div>
+            </div>
+
+            <div class="portfolio-row">
+              <div class="portfolio-left">
+                <div class="p-icon-wrap usdt-icon">$</div>
+                <div>
+                  <h4 class="p-name">Tether</h4>
+                  <span class="p-price">$1.00</span>
+                </div>
+              </div>
+              <div class="portfolio-right">
+                <span class="p-change positive">▲ 0.01%</span>
+                <h4 class="p-amount">500 USDT</h4>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Mobile sidebar overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
